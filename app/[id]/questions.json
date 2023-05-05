@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "text": "yes or no?",
+        "options": [
+            "yes",
+            "no"
+        ]
+    },
+    {
+        "id": 2,
+        "text": "live or die?",
+        "options": [
+            "live",
+            "die"
+        ]
+    },
+    {
+        "id": 3,
+        "text": "darkness or the light?",
+        "options": [
+            "dark",
+            "light"
+        ]
+    },
+    {
+        "id": 4,
+        "text": "what is the essential nature of the absolute?",
+        "options": [
+            "being",
+            "becoming"
+        ]
+    }
+]
