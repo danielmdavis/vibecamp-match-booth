@@ -5,8 +5,8 @@ import reducer from './state'
 
 export default function Home() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
-  const onSubmit = (data) => console.log(data)
+  // const { register, handleSubmit, formState: { errors } } = useForm()
+  // const onSubmit = (data) => console.log(data)
 
 
   const initialCreds = {creds: {key: '', nomen: ''}}
