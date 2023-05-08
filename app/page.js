@@ -2,6 +2,7 @@
 import React, { useState, useReducer } from 'react'
 import Creds from './credsComponent'
 import Question from './questionComponent'
+import Submit from './submitComponent'
 import questions from './questions.json'
 
 export default function Home() {
@@ -32,10 +33,13 @@ export default function Home() {
   const currentQuestion = questions.find(i => i.id === pageCounter)
 
   let currentComponent
+  let lastComponent
   if (pageCounter < 1) {
     currentComponent = <Creds key={0} secretKey={secretKey} setKey={setKey} contact={contact} setContact={setContact} handleCreds={handleCreds} />
-  } else {
+  } else if (currentQuestion !== undefined) {
     currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
+  } else {
+    currentComponent = <Submit />
   }
 
 
