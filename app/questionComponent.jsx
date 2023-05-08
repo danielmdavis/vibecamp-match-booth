@@ -11,12 +11,11 @@ export default function Question (props) {
     //     dispatch({ type: 'vote', vote: [id, text] });
     //     eval(`location='/${parseInt(context.params.id) + 1}';`)
     // }
-
         const options = props.question.options.map(i => {
             return (
                 <div>
                     <label>{i}</label>
-                    <input type='radio' onClick={() => props.handleVote([props.questionId, i]) }/>
+                    <input type='radio' onClick={() => props.handleVote(props.question.text, i) }/>
                 </div>
         )
     })

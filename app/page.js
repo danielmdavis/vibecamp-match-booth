@@ -18,12 +18,13 @@ export default function Home() {
   const handleCreds = () => {
     // dispatch({ type: 'setCreds', creds: creds })
     setCreds({key: secretKey, contact: contact})
-    console.log(creds)
     setPageCounter(pageCounter += 1)
   }
   
   const handleVote = (question, choice) => {
-    setVoteArray(voteArray.push({question: choice}))
+    // console.log(choice)
+    setVoteArray(voteArray => [...voteArray, {[question]: choice}])
+    console.log(creds)
     console.log(voteArray)
     setPageCounter(pageCounter += 1)
   }
@@ -32,9 +33,9 @@ export default function Home() {
 
   let currentComponent
   if (pageCounter < 1) {
-    currentComponent = <Creds secretKey={secretKey} setKey={setKey} contact={contact} setContact={setContact} handleCreds={handleCreds} />
+    currentComponent = <Creds key={0} secretKey={secretKey} setKey={setKey} contact={contact} setContact={setContact} handleCreds={handleCreds} />
   } else {
-    currentComponent = <Question question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
+    currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
   }
 
 
