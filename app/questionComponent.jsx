@@ -12,12 +12,14 @@ export default function Question (props) {
     //     eval(`location='/${parseInt(context.params.id) + 1}';`)
     // }
         const options = props.question.options.map(i => {
+            let key = 0
             return (
-                <div className='label-pair'>
+                <div key={key} className='label-pair'>
                     <label>{i}</label>
                     <input type='radio' onClick={() => props.handleVote(props.question.text, i) }/>
                 </div>
         )
+        key += 1
     })
 
     return (
