@@ -12,7 +12,6 @@ export default function reducer (state, action) {
         let stateBuilder = state.vote
         stateBuilder.push(vote)
         state.vote = stateBuilder
-        console.log(state.vote)
     default:
       return state
   }

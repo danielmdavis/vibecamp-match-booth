@@ -1,36 +1,46 @@
 'use client'
 import React, { useState, useReducer } from 'react'
-import { useForm } from 'react-hook-form'
-import reducer from './state'
+import Creds from './credsComponent'
+import Question from './questionComponent'
+import questions from './questions.json'
 
 export default function Home() {
 
-  // const { register, handleSubmit, formState: { errors } } = useForm()
-  // const onSubmit = (data) => console.log(data)
+  let [pageCounter, setPageCounter] = useState(0)
 
+  let [secretKey, setKey] = useState('')
+  let [contact, setContact] = useState('')
+  let [creds, setCreds] = useState({})
 
-  const initialCreds = {creds: {key: '', nomen: ''}}
-  let newCreds = {key: 'foo', nomen: 'bar'}
+  let [voteArray, setVoteArray] = useState([])
 
-  const [creds, dispatch] = useReducer(reducer, initialCreds);
-
-  const handleCreds = (creds) => {
-    dispatch({ type: 'setCreds', creds: creds });
+  
+  const handleCreds = () => {
+    // dispatch({ type: 'setCreds', creds: creds })
+    setCreds({key: secretKey, contact: contact})
+    console.log(creds)
+    setPageCounter(pageCounter += 1)
   }
+  
+  const handleVote = (question, choice) => {
+    setVoteArray(voteArray.push({question: choice}))
+    console.log(voteArray)
+    setPageCounter(pageCounter += 1)
+  }
+
+  const currentQuestion = questions.find(i => i.id === pageCounter)
+
+  let currentComponent
+  if (pageCounter < 1) {
+    currentComponent = <Creds secretKey={secretKey} setKey={setKey} contact={contact} setContact={setContact} handleCreds={handleCreds} />
+  } else {
+    currentComponent = <Question question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
+  }
+
 
   return (
     <main>
-      <div className='wrap'>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label for='key'>Enter Your LoveBot Key</label>
-          <input id='key'type='password' placeholder='key' {...register('LoveBot Key', {required: true})} />
-          <label for='name'>What should I call you?</label>
-          <input id='name' type='text' placeholder='name' {...register('What should I, LoveBot 3000, call you?', {})} />
-          {/* <input type='submit' /> */}
-          <button onClick={() => handleCreds(newCreds)}>submit</button>
-
-        </form>
-      </div>
+      {currentComponent}
     </main>
   )
 }

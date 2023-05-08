@@ -1,3 +1,13 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap'); */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./SpaceGrotesk-VariableFont_wght.ttf');
+  font-weight: 400;
+}
+
 :root {
   --blue1: rgb(16,84,164);
   --blue2: rgb(75,182,203);
@@ -22,6 +32,7 @@ body {
 }
 
 body {
+  font-family: 'Space Grotesk' !important;
 }
 
 .wrap {
