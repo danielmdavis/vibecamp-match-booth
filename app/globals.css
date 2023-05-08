@@ -24,6 +24,10 @@
   margin: 0;
 }
 
+main {
+  height: 100vh;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -54,6 +58,13 @@ form {
   color: var(--black);
   font-size: 1.25em;
 }
+form[type=text] {
+  box-shadow: 1px 3px 5px 0px rgb(46,36,37,0.75);
+}
+input[type=radio] {
+  box-shadow: none;
+  background: var(--orange);
+}
 
 button {
   width: 80px;
@@ -63,7 +74,11 @@ button {
   font-family: 'Space Grotesk';
   font-size: 1em;
   font-weight: 700 !important;
+  box-shadow: inset 1px 2px 3px 0px rgb(46,36,37,0.75);
+  border: none;
 }
+
+
 
 .question-text {
   text-align: center;
@@ -81,6 +96,11 @@ button {
 input {
   height: 25px;
   display: inline;
+  background-color: var(--yellow);
+  font-family: 'Space Grotesk';
+  font-size: 0.85em;
+  box-shadow: inset 1px 2px 3px 0px rgb(46,36,37,0.75);
+  border: none;
 }
 .button-pair {
   display: flex;
