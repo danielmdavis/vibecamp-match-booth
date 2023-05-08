@@ -6,12 +6,14 @@ export default function Submit(props) {
 
     return (
         <div className='wrap' style={{ fontFamily: 'Space Grotesk' }}>
-        <form>
-          <label className='question-text'>One final question: are ready to submit your answers? To not just LoveBot, but your crush?</label>
+        <form className={`form fade-in`}>
+          <label className='question-text'>And now, one final question. Are ready to share your answers with not just me, LoveBot 3000, but your crush as well?</label>
           <label className='question-text'>You will not be shown your matches otherwise. Think it over.</label>
 
-          <button onClick={() => props.handleCreds()}>yes</button>
-          <button>no</button>
+            <div className='button-pair'> 
+                <button onClick={() => props.handleCreds()}>yes</button>
+                <button>no</button>
+            </div>
 
         </form>
       </div>

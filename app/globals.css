@@ -51,6 +51,18 @@ form {
   border: 8px solid var(--blue2);
   border-radius: 40px;
   background-color: var(--pink);
+  color: var(--black);
+  font-size: 1.25em;
+}
+
+button {
+  width: 80px;
+  height: 30px;
+  background-color: var(--green);
+  color: var(--black);
+  font-family: 'Space Grotesk';
+  font-size: 1em;
+  font-weight: 700 !important;
 }
 
 .question-text {
@@ -69,6 +81,11 @@ form {
 input {
   height: 25px;
   display: inline;
+}
+.button-pair {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .fade-in {
