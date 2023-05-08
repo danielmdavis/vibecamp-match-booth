@@ -45,6 +45,7 @@ export default function Home() {
 
   return (
     <main>
+      <div className='header'>Lovebot Match Booth</div>
       {currentComponent}
     </main>
   )
