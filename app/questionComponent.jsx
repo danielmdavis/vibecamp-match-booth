@@ -13,7 +13,7 @@ export default function Question (props) {
     // }
         const options = props.question.options.map(i => {
             return (
-                <div>
+                <div className='label-pair'>
                     <label>{i}</label>
                     <input type='radio' onClick={() => props.handleVote(props.question.text, i) }/>
                 </div>
@@ -22,10 +22,12 @@ export default function Question (props) {
 
     return (
 
-      <div className='form'>
+      <div className={`form fade-in`}>
         <form>
-            <label>{props.question.text}</label>
+            <label className='question-text'>{props.question.text}</label>
+            <div className='question-options'>
             {options}
+            </div>
         </form>
       </div>
     )

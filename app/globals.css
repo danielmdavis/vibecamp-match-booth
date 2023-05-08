@@ -53,11 +53,32 @@ form {
   background-color: var(--pink);
 }
 
-input {
-  height: 25px;
+.question-text {
+  text-align: center;
+}
+.question-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.label-pair {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
+input {
+  height: 25px;
+  display: inline;
+}
 
+.fade-in {
+  animation: fadeIn 0.75s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 .slide-in {
   animation: slide-in 0.5s forwards;
