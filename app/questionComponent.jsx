@@ -11,14 +11,15 @@ export default function Question (props) {
     //     dispatch({ type: 'vote', vote: [id, text] });
     //     eval(`location='/${parseInt(context.params.id) + 1}';`)
     // }
+        let key = 0
         const options = props.question.options.map(i => {
-            let key = 0
-            return (
-                <div key={key} className='label-pair'>
-                    <label>{i}</label>
-                    <input type='radio' onClick={() => props.handleVote(props.question.text, i) }/>
-                </div>
-        )
+          key += 1
+          return (
+            <div key={key} className='label-pair'>
+                <label>{i}</label>
+                <input type='radio' onClick={() => props.handleVote(props.question.text, i) }/>
+            </div>
+      )
         key += 1
     })
 

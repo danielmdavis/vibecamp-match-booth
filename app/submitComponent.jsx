@@ -28,7 +28,7 @@ export default function Submit(props) {
 
 
     `
-    console.log(styledVotes)
+    console.log(props.matches)
 
     const params = {
       email: 'danis1911@gmail.com',
@@ -41,7 +41,7 @@ export default function Submit(props) {
       }, (error) => {
           console.log(error.text)
       })
-
+    props.voted()
   }
 
     return (
