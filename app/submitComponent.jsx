@@ -28,7 +28,6 @@ export default function Submit(props) {
 
 
     `
-    console.log(props.matches)
 
     const params = {
       email: 'danis1911@gmail.com',
@@ -41,7 +40,7 @@ export default function Submit(props) {
       }, (error) => {
           console.log(error.text)
       })
-    props.voted()
+    props.votedYes()
   }
 
     return (
@@ -52,7 +51,7 @@ export default function Submit(props) {
 
             <div className='button-pair'> 
                 <button onClick={sendEmail}>yes</button>
-                <button>no</button>
+                <button onClick={props.votedNo}>no</button>
             </div>
 
         </form>

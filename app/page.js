@@ -5,6 +5,7 @@ import Creds from './credsComponent'
 import Question from './questionComponent'
 import Submit from './submitComponent'
 import End from './endComponent'
+import EndGood from './endGoodComponent'
 import Error from './errorComponent'
 
 import questions from './questions.json'
@@ -20,7 +21,7 @@ export default function Home() {
 
   let [matches, setMatches] = useState({})
 
-  let [voted, setVoted] = useState(false)
+  let [voted, setVoted] = useState('')
 
   let [voteArray, setVoteArray] = useState([])
 
@@ -41,8 +42,11 @@ export default function Home() {
     setPageCounter(pageCounter += 1)
   }
 
-  const handleVoted = () => {
-    setVoted(true)
+  const handleVotedYes = () => {
+    setVoted('yes')
+  }
+  const handleVotedNo = () => {
+    setVoted('no')
   }
 
   const currentQuestion = questions.find(i => i.id === pageCounter)
@@ -55,10 +59,12 @@ export default function Home() {
     currentComponent = <Error key={500} />
   } else if (currentQuestion !== undefined && pageCounter !== 500) {
     currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
-  } else if (voted === false) {
-    currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} voted={handleVoted} matches={matches} />
-  } else {
+  } else if (voted === '') {
+    currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} votedYes={handleVotedYes} votedNo={handleVotedNo} />
+  } else if (voted === 'no') {
     currentComponent = <End key={1009} />
+  } else if (voted === 'yes') {
+    currentComponent = <EndGood key={1007} matches={matches} />
   }
 
   console.log(pageCounter)
