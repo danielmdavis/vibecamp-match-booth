@@ -39,7 +39,7 @@ export default function Home() {
   } else if (currentQuestion !== undefined) {
     currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
   } else {
-    currentComponent = <Submit />
+    currentComponent = <Submit creds={creds} voteArray={voteArray} />
   }
 
 
