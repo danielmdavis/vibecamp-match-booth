@@ -60,7 +60,7 @@ export default function Home() {
   } else if (currentQuestion !== undefined && pageCounter !== 500) {
     currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
   } else if (voted === '') {
-    currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} votedYes={handleVotedYes} votedNo={handleVotedNo} />
+    currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} votedYes={handleVotedYes} votedNo={handleVotedNo} matches={matches} />
   } else if (voted === 'no') {
     currentComponent = <End key={1009} />
   } else if (voted === 'yes') {

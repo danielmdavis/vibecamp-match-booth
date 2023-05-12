@@ -1,9 +1,17 @@
+
+import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
 
 
 export default function Submit(props) {
 
-  const sendEmail = e => {
+  const emailArray = props.matches.matches.map(match => {
+    return match.email
+  })
+
+  let [emails, setEmails] = useState(emailArray)
+
+  const sendEmail = (event, email) => {
 
     const votes = props.voteArray.map(v => {
       const vote = Object.entries(v)[0]
@@ -18,7 +26,7 @@ export default function Submit(props) {
     // </div>`
 
     const styledVotes = 
-    `Want to know who your match really is, deep down? Read on.
+    `Want to know who ${props.matches.name} really is, deep down? Read on.
       ${votes}
 
     If you're still interested, you can reach them at foo@bar.com
@@ -30,10 +38,10 @@ export default function Submit(props) {
     `
 
     const params = {
-      email: 'danis1911@gmail.com',
+      email: email,
       message: styledVotes
     }
-    e.preventDefault()
+    event.preventDefault()
     emailjs.send('service_6mrou7s', 'template_htabidd', params, 'LZ8PCPJuf-O1SbJGf')
       .then((result) => {
           // window.location.reload() 
@@ -43,6 +51,13 @@ export default function Submit(props) {
     props.votedYes()
   }
 
+  const sendAllEmails = (event) => {
+    console.log(emails)
+    emails.forEach(email => {
+      sendEmail(event, email)
+    })
+  }
+
     return (
         <div className='wrap' style={{ fontFamily: 'Space Grotesk' }}>
         <form className={`form fade-in`}>
@@ -50,7 +65,7 @@ export default function Submit(props) {
           <label className='question-text'>I regret to inform you that you will not be shown your matches otherwise. Think it over.</label>
 
             <div className='button-pair'> 
-                <button onClick={sendEmail}>yes</button>
+                <button onClick={sendAllEmails}>yes</button>
                 <button onClick={props.votedNo}>no</button>
             </div>
 

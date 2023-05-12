@@ -6,7 +6,7 @@ export default function EndGood(props) {
   let key = 0
   const matches = props.matches.matches.map(match => {
     key += 1
-    return <span key={key}> {match.name} :: {match.email} <br /><br /></span>
+    return <span key={key}> {match.name} <br /><br /></span>
   })
 
     return (
@@ -16,11 +16,6 @@ export default function EndGood(props) {
           Congratulations on your {props.matches.matches.length} matches. <br /><br />
           {matches}
           </label>
-          {/* <label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Love, <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LoveBot 3000
-          </label> */}
-
 
         </form>
       </div>
