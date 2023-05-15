@@ -15,6 +15,12 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Tan Buster';
+  src: url('./TAN-BUSTER.otf');
+  /* font-weight: 400; */
+}
+
 :root {
   --blue1: rgb(16,84,164);
   --blue2: rgb(75,182,203);
@@ -167,7 +173,7 @@ input:focus {
 }
 
 .header {
-  font-family: 'Molle';
+  font-family: 'TAN BUSTER';
   font-size: 5em;
   color: var(--orange);
   -webkit-text-stroke-width: 4px;
