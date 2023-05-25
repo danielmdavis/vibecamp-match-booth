@@ -42,7 +42,7 @@ export default function Submit(props) {
       message: styledVotes
     }
     event.preventDefault()
-    emailjs.send('service_6mrou7s', 'template_htabidd', params, 'LZ8PCPJuf-O1SbJGf')
+    emailjs.send('service_l9aelbf', 'template_htabidd', params, 'LZ8PCPJuf-O1SbJGf')
       .then((result) => {
           // window.location.reload() 
       }, (error) => {
