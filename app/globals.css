@@ -53,7 +53,9 @@ body {
 }
 
 .wrap {
-  align-items: center;
+  align-items: center !important;
+  text-align: center;
+  position: relative;
 }
 
 form {
@@ -150,7 +152,19 @@ button:active {
   flex-direction: column-reverse;
 }
 
-input {
+.textarea {
+  width: 37.5vw !important;
+}
+textarea {
+  border: none;
+  padding: none;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  /* resize: none; */
+}
+input, textarea {
   height: 25px;
   display: inline;
   color: var(--black);
@@ -161,7 +175,7 @@ input {
   border: none;
   transition: box-shadow 0.33s !important;
 }
-input:focus {
+input:focus, textarea:focus {
   transition: filter 0.25s !important;
   filter: drop-shadow(1px 3px 3px rgb(46,36,37,0.5));
   outline: none;

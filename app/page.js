@@ -11,6 +11,13 @@ import Error from './errorComponent'
 import questions from './questions.json'
 import matchData from './matches.json'
 
+// fix email sending to user, not matches
+// fix duplicate emails
+// text entry style questions!
+
+// get and parse map data in preparation for event
+
+
 export default function Home() {
 
   let [pageCounter, setPageCounter] = useState(0)
@@ -22,6 +29,8 @@ export default function Home() {
   let [matches, setMatches] = useState({})
 
   let [voted, setVoted] = useState('')
+
+  let [currString, setCurrString] = useState('')
 
   let [voteArray, setVoteArray] = useState([])
 
@@ -35,7 +44,6 @@ export default function Home() {
   }
 
   const handleVote = (question, choice) => {
-    // console.log(choice)
     setVoteArray(voteArray => [...voteArray, {[question]: choice}])
     console.log(creds)
     console.log(voteArray)
@@ -58,7 +66,7 @@ export default function Home() {
   } else if (pageCounter === 500) {
     currentComponent = <Error key={500} />
   } else if (currentQuestion !== undefined && pageCounter !== 500) {
-    currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} />
+    currentComponent = <Question key={pageCounter} question={currentQuestion} questionId={pageCounter} handleVote={handleVote} currString={currString} setCurrString={setCurrString} />
   } else if (voted === '') {
     currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} votedYes={handleVotedYes} votedNo={handleVotedNo} matches={matches} />
   } else if (voted === 'no') {
@@ -67,7 +75,7 @@ export default function Home() {
     currentComponent = <EndGood key={1007} matches={matches} />
   }
 
-  console.log(pageCounter)
+
 
   return (
     <main>

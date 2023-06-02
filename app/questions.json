@@ -1,11 +1,7 @@
 [
     {
         "id": 1,
-        "text": "yes or no?",
-        "options": [
-            "yes",
-            "no"
-        ]
+        "text": "yes or no?"
     },
     {
         "id": 2,
