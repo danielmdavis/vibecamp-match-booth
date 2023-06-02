@@ -1,5 +1,9 @@
 
+import autosize from 'autosize'
+
 export default function Question (props) {
+
+  autosize(document.querySelectorAll('textarea'))
 
   let options
   let entry

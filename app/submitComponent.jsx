@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
-
 
 export default function Submit(props) {
 
@@ -17,7 +15,7 @@ export default function Submit(props) {
       const vote = Object.entries(v)[0]
       return `
       ${vote[0]}  
-      &nbsp;&nbsp;&nbsp;&nbsp;${vote[1]}
+      ${vote[1]}
       `
     }).join('')
     
@@ -32,7 +30,7 @@ export default function Submit(props) {
     
     Questions and answers:
       ${votes}
-      If you're still interested, you can reach them at [PLACEHOLDER FOR QUIZ TAKER TWITTER]
+      Now you know, and knowing is half the battle. Whether or not you're still interested is between you two.
       
       Faithfully yours,
       LoveBot 3000

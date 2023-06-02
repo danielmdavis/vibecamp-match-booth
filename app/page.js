@@ -11,9 +11,7 @@ import Error from './errorComponent'
 import questions from './questions.json'
 import matchData from './matches.json'
 
-
-// text entry style questions!
-// fill placeholder with handle of quiz taker!
+// to dos
 
 // get and parse map data in preparation for event
 
