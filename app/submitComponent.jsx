@@ -41,8 +41,9 @@ export default function Submit(props) {
       email: email,
       message: styledVotes
     }
+    console.log(params)
     event.preventDefault()
-    emailjs.send('service_l9aelbf', 'template_htabidd', params, 'LZ8PCPJuf-O1SbJGf')
+    emailjs.send('lovebot', 'template_1', params, 'pl4zE7KE9MO7eFewc')
       .then((result) => {
           // window.location.reload() 
       }, (error) => {

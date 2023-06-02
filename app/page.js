@@ -75,8 +75,6 @@ export default function Home() {
     currentComponent = <EndGood key={1007} matches={matches} />
   }
 
-
-
   return (
     <main>
       <div className='header'>LoveBot Match Booth</div>
