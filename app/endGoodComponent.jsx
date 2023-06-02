@@ -2,7 +2,6 @@
 
 export default function EndGood(props) {
 
-  console.log(props.matches.matches)
   let key = 0
   const matches = props.matches.matches.map(match => {
     key += 1

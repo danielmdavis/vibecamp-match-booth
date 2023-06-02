@@ -11,9 +11,9 @@ import Error from './errorComponent'
 import questions from './questions.json'
 import matchData from './matches.json'
 
-// fix email sending to user, not matches
-// fix duplicate emails
+
 // text entry style questions!
+// fill placeholder with handle of quiz taker!
 
 // get and parse map data in preparation for event
 
@@ -45,8 +45,6 @@ export default function Home() {
 
   const handleVote = (question, choice) => {
     setVoteArray(voteArray => [...voteArray, {[question]: choice}])
-    console.log(creds)
-    console.log(voteArray)
     setPageCounter(pageCounter += 1)
   }
 

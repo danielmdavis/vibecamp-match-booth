@@ -16,32 +16,37 @@ export default function Submit(props) {
     const votes = props.voteArray.map(v => {
       const vote = Object.entries(v)[0]
       return `
-      &nbsp;&nbsp;&nbsp;&nbsp;${vote[0]}  ${vote[1]}`
-    })
-
+      ${vote[0]}  
+      &nbsp;&nbsp;&nbsp;&nbsp;${vote[1]}
+      `
+    }).join('')
+    
     // const styledVotes = `<div style={{ background-color: 'rgb(75,182,203)', color: 'rgb(239,103,69)', font-family: 'Helvetica'}}>
     //   Want to know who your match really is? Read on.
-
+    
     //   ${votes}
     // </div>`
-
+    
     const styledVotes = 
-    `Want to know who ${props.matches.name} really is, deep down? Read on.
+    `Want to know who your match ${props.matches.name} really is, deep down? Read on.
+    
+    Questions and answers:
       ${votes}
+      If you're still interested, you can reach them at [PLACEHOLDER FOR QUIZ TAKER TWITTER]
+      
+      Faithfully yours,
+      LoveBot 3000
+      
+      
+      `
 
-    If you're still interested, you can reach them at foo@bar.com
-
-    Faithfully yours,
-    LoveBot 3000
-
-
-    `
+      console.log(styledVotes)
 
     const params = {
       email: email,
-      message: styledVotes
+      message: styledVotes,
+      name: props.matches.name
     }
-    console.log(params)
     event.preventDefault()
     emailjs.send('lovebot', 'template_1', params, 'pl4zE7KE9MO7eFewc')
       .then((result) => {
@@ -53,7 +58,6 @@ export default function Submit(props) {
   }
 
   const sendAllEmails = (event) => {
-    console.log(emails)
     emails.forEach(email => {
       sendEmail(event, email)
     })
