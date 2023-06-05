@@ -1,30 +1,22 @@
 [
     {
         "id": 1,
-        "text": "yes or no?"
+        "text": "What is your fundamental problem?"
     },
     {
         "id": 2,
-        "text": "live or die?",
-        "options": [
-            "live",
-            "die"
-        ]
+        "text": "What is a belief you have that is the closest to being a conspiracy theory?"
     },
     {
         "id": 3,
-        "text": "darkness or the light?",
+        "text": "Do you feel that you’ve lived a beautiful life?",
         "options": [
-            "dark",
-            "light"
+            "Yes",
+            "No"
         ]
     },
     {
         "id": 4,
-        "text": "what is the essential nature of the absolute?",
-        "options": [
-            "being",
-            "becoming"
-        ]
+        "text": "Describe your sex."
     }
 ]

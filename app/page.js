@@ -13,7 +13,8 @@ import matchData from './matches.json'
 
 // to dos
 
-// get and parse map data in preparation for event
+// hand tune real match data as needed
+// final user testing
 
 
 export default function Home() {
