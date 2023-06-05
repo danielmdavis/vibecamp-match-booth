@@ -5,6 +5,11 @@ export default function Question (props) {
 
   autosize(document.querySelectorAll('textarea'))
 
+  const getAnswer = () => {
+    props.handleVote(props.question.text, props.currString)
+    props.setCurrString('')
+  }
+
   let options
   let entry
   if (props.question.options) {
@@ -23,7 +28,7 @@ export default function Question (props) {
     entry =
       <div style={{ fontFamily: 'Space Grotesk'}}>
           <textarea className='textarea' id='key' type='text' value={props.currString} onChange={e => {props.setCurrString(e.target.value)}} /> <br /><br />
-          <button style={{ alignSelf: 'center'}} onClick={() => props.handleVote(props.question.text, props.currString)}>next</button>
+          <button style={{ alignSelf: 'center'}} onClick={() => getAnswer()}>next</button>
       </div>
   }
 
