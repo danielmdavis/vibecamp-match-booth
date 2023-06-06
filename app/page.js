@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from 'react'
 import useSound from 'use-sound'
 
-import Creds from './credsComponent'
-import Question from './questionComponent'
-import Submit from './submitComponent'
-import End from './endComponent'
-import EndGood from './endGoodComponent'
-import Error from './errorComponent'
+import Creds from './component/credsComponent'
+import Question from './component/questionComponent'
+import Submit from './component/submitComponent'
+import End from './component/endComponent'
+import EndGood from './component/endGoodComponent'
+import Error from './component/errorComponent'
 
 import questions from './questions.json'
 import matchData from './matches.json'
@@ -16,11 +16,6 @@ import matchData from './matches.json'
 
 // Email to matches
 // - Content: “Hi there! \n We think that you’d be a great match for Alice Mottola. Want to know who she really is, deep down? 
-
-// Other
-// - Reload the page after 30s 
-// - Add jingle playing on loop: https://drive.google.com/file/d/1XiTgchx9qOQBhNEsS3uZjh2RcWsdV2dv/view?usp=sharing 
-
 
 export default function Home() {
 
@@ -42,7 +37,12 @@ export default function Home() {
     const audio = new Audio('/lovebot.mp3')
     audio.loop = true
     audio.play()
+    console.log('foo')
   }
+
+  useEffect(() => {
+    startSong()
+  })
 
   const handleMatches = () => {
     if (matchData[secretKey] === undefined) {
