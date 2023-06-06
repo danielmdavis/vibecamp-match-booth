@@ -27,7 +27,7 @@ export default function Question (props) {
   } else {
     entry =
       <div style={{ fontFamily: 'Space Grotesk'}}>
-          <textarea className='textarea' id='key' type='text' rows='4' value={props.currString} onChange={e => {props.setCurrString(e.target.value)}} /> <br /><br />
+          <textarea className='textarea' id='key' type='text' autocomplete='off' value={props.currString} onChange={e => {props.setCurrString(e.target.value)}} /> <br /><br />
           <button disabled={!props.canClick} style={{ alignSelf: 'center'}} onClick={() => getAnswer()}>next</button>
       </div>
   }
