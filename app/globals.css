@@ -134,12 +134,18 @@ button {
 button:hover {
   transition: filter 0.16s !important;
   filter: drop-shadow(1px 2px 3px rgb(46,36,37,0.75));
-  /* box-shadow: 2px 3px 3px 0px rgb(46,36,37,0.75); */
   box-shadow: none;
 }
 button:active {
   outline: none;
   box-shadow: inset 4px 5px 5px 0px rgb(46,36,37,0.75);
+}
+
+button:disabled, button[disabled] {
+  background-color: #d6d6d6;
+  color: #828282;
+  pointer-events: none !important;
+  box-shadow: inset 1px 1px 2px 0px rgb(46,36,37,0.33);
 }
 
 .end {
@@ -165,12 +171,12 @@ button:active {
 }
 textarea {
   border: none;
-  padding: none;
+  padding: 15px !important;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 100% !important;
-  /* resize: none; */
+  height: 75px !important;
 }
 input, textarea {
   height: 25px;
@@ -204,7 +210,7 @@ input:focus, textarea:focus {
   -webkit-text-stroke-color: var(--orange); */
   align-items: center;
   text-align: center;
-  margin: 25px;
+  margin: 35px;
   animation: fadeIn 0.75s;
 }
 

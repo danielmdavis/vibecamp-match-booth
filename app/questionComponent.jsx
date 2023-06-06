@@ -27,12 +27,18 @@ export default function Question (props) {
   } else {
     entry =
       <div style={{ fontFamily: 'Space Grotesk'}}>
-          <textarea className='textarea' id='key' type='text' value={props.currString} onChange={e => {props.setCurrString(e.target.value)}} /> <br /><br />
-          <button style={{ alignSelf: 'center'}} onClick={() => getAnswer()}>next</button>
+          <textarea className='textarea' id='key' type='text' rows='4' value={props.currString} onChange={e => {props.setCurrString(e.target.value)}} /> <br /><br />
+          <button disabled={!props.canClick} style={{ alignSelf: 'center'}} onClick={() => getAnswer()}>next</button>
       </div>
   }
 
   const optionsOrEntry = options !== undefined ? options : entry
+
+  if (props.currString !== '') {
+    props.setCanClick(true)
+  } else {
+    props.setCanClick(false)
+  }
 
   return (
 
