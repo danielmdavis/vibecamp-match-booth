@@ -14,8 +14,7 @@ import matchData from './matches.json'
 
 // to dos
 
-// Email to matches
-// - Content: “Hi there! \n We think that you’d be a great match for Alice Mottola. Want to know who she really is, deep down? 
+// load and tune live matches
 
 export default function Home() {
 
@@ -30,19 +29,18 @@ export default function Home() {
   let [voteArray, setVoteArray] = useState([])
 
   let [canClick, setCanClick] = useState(false)
+  let [songPlaying, setSongPlaying] = useState(false)
 
   // useSound('/lovebot.mp3', { volume: 1.0 }) 
 
   const startSong = () => {
     const audio = new Audio('/lovebot.mp3')
     audio.loop = true
-    audio.play()
-    console.log('foo')
+    if (!songPlaying) {
+      audio.play()
+      setSongPlaying(true)
+    }
   }
-
-  useEffect(() => {
-    startSong()
-  })
 
   const handleMatches = () => {
     if (matchData[secretKey] === undefined) {
