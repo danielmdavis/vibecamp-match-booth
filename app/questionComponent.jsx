@@ -37,7 +37,7 @@ export default function Question (props) {
   return (
 
     <div className={`form fade-in`}>
-    <div className='wrap'>
+    <div className={`wrap question`}>
       <form className='form'>
           <label className='question-text'>{props.question.text}</label>
           <div className='question-options'>

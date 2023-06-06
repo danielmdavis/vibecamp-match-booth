@@ -26,9 +26,9 @@ export default function Submit(props) {
     // </div>`
     
     const styledVotes = 
-    `Want to know who your match ${props.matches.name} really is, deep down? Read on.
+    `Want to know who your match ${props.matches.name} really is, deep down?
     
-    Questions and answers:
+    Here's how ${props.matches.name.slice(0, props.matches.name.indexOf(' '))} answered the following questions:
       ${votes}
       Now you know, and knowing is half the battle. Whether or not you're still interested is between you two.
       
@@ -64,7 +64,7 @@ export default function Submit(props) {
     return (
         <div className='wrap' style={{ fontFamily: 'Space Grotesk' }}>
         <form className={`form fade-in`}>
-          <label className='question-text'>One final question: are prepared to share your answers with not just me, LoveBot 3000, but your matches as well?</label>
+          <label className='question-text'>One final question: are you prepared to share your answers with not just me, LoveBot 3000, but your matches as well?</label>
           <label className='question-text'>I regret to inform you that you will not be shown your matches otherwise. Think it over.</label>
 
             <div className='button-pair'> 

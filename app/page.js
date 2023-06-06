@@ -13,8 +13,21 @@ import matchData from './matches.json'
 
 // to dos
 
-// hand tune real match data as needed
-// final user testing
+// First page 
+// - Rounded button, greyed out 
+// - More margin between top and title and center box 
+
+// Question pages 
+// - Text input should be larger by default —4 lines
+
+// Email to matches
+// - Content: “Hi there! \n We think that you’d be a great match for Alice Mottola. Want to know who she really is, deep down? 
+
+// Other
+// - Reload the page after 30s 
+// - Shouldn’t be able to go to next if there’s nothing filled out in the text box
+// - Add jingle playing on loop: https://drive.google.com/file/d/1XiTgchx9qOQBhNEsS3uZjh2RcWsdV2dv/view?usp=sharing 
+
 
 
 export default function Home() {

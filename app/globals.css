@@ -118,15 +118,17 @@ label {
 }
 
 button {
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 45px;
   background-color: var(--pink);
   color: var(--black);
   font-family: 'Space Grotesk';
-  font-size: 1em;
+  font-size: 0.85em;
   font-weight: 700 !important;
   box-shadow: inset 1px 2px 3px 0px rgb(46,36,37,0.75);
   border: none;
+  border-radius: 15px; 
+  padding: 8px;
   transition: box-shadow 0.33s !important;
 }
 button:hover {
@@ -140,10 +142,13 @@ button:active {
   box-shadow: inset 4px 5px 5px 0px rgb(46,36,37,0.75);
 }
 
-
+.end {
+  font-size: 0.75em;
+}
 
 .question-text {
   text-align: center;
+  font-size: 1.33em;
 }
 .question-options {
   display: flex;
@@ -171,9 +176,11 @@ input, textarea {
   height: 25px;
   display: inline;
   color: var(--black);
-  background-color: var(--yellow);
+  background-color: var(--blue2);
+  padding: 10px;
+  border-radius: 20px;
   font-family: 'Space Grotesk';
-  font-size: 0.85em;
+  font-size: 0.75em;
   box-shadow: inset 1px 1px 3px 0px rgb(46,36,37,0.75);
   border: none;
   transition: box-shadow 0.33s !important;
@@ -191,13 +198,13 @@ input:focus, textarea:focus {
 
 .header {
   font-family: 'TAN BUSTER';
-  font-size: 5em;
+  font-size: 4em;
   color: var(--yellow);
   /* -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--orange); */
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin: 25px;
   animation: fadeIn 0.75s;
 }
 
