@@ -106,9 +106,7 @@ input[type="radio"]:active {
   box-shadow: inset 4px 5px 5px 0px rgb(46,36,37,0.75);
 }
 .small-label {
-  font-size: 0.6em;
-  margin-top: -20px;
-  margin-bottom: -30px;
+  font-size: 0.75em;
   margin-left: 2px;
 }
 label {

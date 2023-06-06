@@ -8,16 +8,20 @@ export default function EndGood(props) {
     return <span key={key}> {match.name} <br /><br /></span>
   })
 
-    return (
-        <div className={'wrap end'} style={{ fontFamily: 'Space Grotesk' }}>
-        <form className={`form fade-in`}>
-          <label className='question-text'>
-          Congratulations! In order of compatibility, these are your top {props.matches.matches.length} matches.<br /><br />
-          <div style={{ fontSize: '1.33em', fontWeight: 'bold', margin: '10px' }}>{matches}</div>
-          Your answers have been sent to your matches. Please make a note of them before the page resets for the next user.
-          </label>
+  setTimeout(() => {
+    props.refresh()
+  }, 30000)
 
-        </form>
-      </div>
-    )
+  return (
+      <div className={'wrap end'} style={{ fontFamily: 'Space Grotesk' }}>
+      <form className={`form fade-in`}>
+        <label className='question-text'>
+        Congratulations! In order of compatibility, these are your top {props.matches.matches.length} matches.<br /><br />
+        <div style={{ fontSize: '1.33em', fontWeight: 'bold', margin: '10px' }}>{matches}</div>
+        Your answers have been sent to your matches. Please make a note of them before the page resets for the next user.
+        </label>
+
+      </form>
+    </div>
+  )
 }

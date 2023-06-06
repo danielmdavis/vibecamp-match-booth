@@ -57,6 +57,8 @@ export default function Home() {
     setVoted('no')
   }
 
+  const refresh = () => window.location.reload(true)
+
   const currentQuestion = questions.find(i => i.id === pageCounter)
 
   let currentComponent
@@ -70,9 +72,9 @@ export default function Home() {
   } else if (voted === '') {
     currentComponent = <Submit key={1008} creds={creds} voteArray={voteArray} votedYes={handleVotedYes} votedNo={handleVotedNo} matches={matches} />
   } else if (voted === 'no') {
-    currentComponent = <End key={1009} />
+    currentComponent = <End key={1009} refresh={refresh} />
   } else if (voted === 'yes') {
-    currentComponent = <EndGood key={1007} matches={matches} />
+    currentComponent = <EndGood key={1007} matches={matches} refresh={refresh} />
   }
 
   return (
