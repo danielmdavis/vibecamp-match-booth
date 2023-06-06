@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useReducer } from 'react'
+import React, { useState, useEffect } from 'react'
+import useSound from 'use-sound'
 
 import Creds from './credsComponent'
 import Question from './questionComponent'
@@ -35,6 +36,13 @@ export default function Home() {
 
   let [canClick, setCanClick] = useState(false)
 
+  // useSound('/lovebot.mp3', { volume: 1.0 }) 
+
+  const startSong = () => {
+    const audio = new Audio('/lovebot.mp3')
+    audio.loop = true
+    audio.play()
+  }
 
   const handleMatches = () => {
     if (matchData[secretKey] === undefined) {
@@ -64,7 +72,7 @@ export default function Home() {
   let currentComponent
   let lastComponent
   if (pageCounter < 1) {
-    currentComponent = <Creds key={0} secretKey={secretKey} setKey={setKey} handleMatches={handleMatches} canClick={canClick} setCanClick={setCanClick} />
+    currentComponent = <Creds key={0} secretKey={secretKey} setKey={setKey} handleMatches={handleMatches} canClick={canClick} setCanClick={setCanClick} startSong={startSong} />
   } else if (pageCounter === 500) {
     currentComponent = <Error key={500} />
   } else if (currentQuestion !== undefined && pageCounter !== 500) {

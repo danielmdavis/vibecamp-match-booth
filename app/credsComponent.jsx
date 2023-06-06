@@ -23,7 +23,7 @@ export default function Creds(props) {
         <form className='form'>
           <label>Enter Your LoveBot passphrase</label>
           <label className='small-label'>Remember? This is the secret passphrase you came up with when filling out the Love Science survey. We sent it to your email.</label>
-          <input id='key' type='text' value={props.secretKey} autocomplete='off' onChange={e => {props.setKey(e.target.value)}} />
+          <input id='key' type='text' value={props.secretKey} autocomplete='off' onChange={e => {props.setKey(e.target.value)}} onClick={props.startSong} />
           <button disabled={!props.canClick} style={{ alignSelf: 'center'}} onClick={() => props.handleMatches()}>begin</button>
         </form>
       </div>
