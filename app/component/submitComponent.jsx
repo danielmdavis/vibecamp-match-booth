@@ -26,7 +26,7 @@ export default function Submit(props) {
     // </div>`
     
     const styledVotes = 
-    `Hi There! We think you'd be a great match for ${props.matches.name}. Want to know who they really are, deep down?
+    `Hi there! We think you'd be a great match for ${props.matches.name}. Want to know who they really are, deep down?
     
     Here's how ${props.matches.name.slice(0, props.matches.name.indexOf(' '))} answered the following questions:
     ${votes}
