@@ -1,0 +1,57 @@
+{
+  "mc08302014": {
+    "name": "milton",
+    "matches": "redacted"
+  },
+  "dd10221991": {
+    "name": "Daniel Davis",
+    "matches": [
+      {
+        "name": "@sophianegativa",
+        "email": "alice.mottola@gmail.com"
+      },
+      {
+        "name": "morg",
+        "email": "morganeciot@gmail.com"
+      },
+      {
+        "name": "@bunnydelphine",
+        "email": "mac803@nyu.edu"
+      }
+    ]
+  },
+  "am07151988": {
+    "name": "Alice Mottola",
+    "matches": [
+      {
+        "name": "Daniel Davis",
+        "email": "danis1911@gmail.com"
+      },
+      {
+        "name": "@dril",
+        "email": "morg@zorgproductions.com"
+      },
+      {
+        "name": "@hitRECordJoe",
+        "email": "mac803@nyu.edu"
+      }
+    ]
+  },
+  "mc12071991": {
+    "name": "Morg",
+    "matches": [
+      {
+        "name": "@sophianegativa",
+        "email": "alice.mottola@gmail.com"
+      },
+      {
+        "name": "@DanielDavisFL",
+        "email": "danis1911@gmail.com"
+      },
+      {
+        "name": "@DAVID_LYNCH",
+        "email": "morg@zorgproductions.com"
+      }
+    ]
+  }
+}
